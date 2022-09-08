@@ -16,7 +16,7 @@ In order for this component to function it requires the esp-nimble-cpp component
 
 1. Add this component to your project or componets directory for the esp-idf 
     ```c++
-        git clone <ssh repo url>
+    git clone <ssh repo url>
     ```
 2. Include "OtaUpdateManager.h" 
 3. Create a new instance of the OtaUpdateManager class. 
@@ -65,13 +65,6 @@ In order for this component to function it requires the esp-nimble-cpp component
 
 
 ### Trobleshooting 
-Flow Control
-
-Flash Size needs to be correct
-
-Two OTA partitions
-
-NimBLE enabled
 
 1. Make sure NimBLE is enabled menuconfig -> Component config -> Bluetooth -> Bluetooth Host (NimBLE - BLE only)
 2. Flow Control needs to be enabled in NimBLE options menuconfig -> Component config -> Bluetooth -> NimBLE Options -> Flow Control
