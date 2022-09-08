@@ -15,6 +15,9 @@ In order for this component to function it requires the esp-nimble-cpp component
 ## How to use 
 
 1. Add this component to your project or componets directory for the esp-idf 
+    ```c++
+        git clone <ssh repo url>
+    ```
 2. Include "OtaUpdateManager.h" 
 3. Create a new instance of the OtaUpdateManager class. 
     ```c++ 

@@ -15,7 +15,6 @@ class I_OtaUpdateManager;
 class OtaUpdateManager {
 
     public:
-        //MARK: OTA INFO 
         esp_ota_handle_t otaHandler = 0;
         const esp_partition_t *update_partition;
         //start byte for ota firmware
@@ -48,23 +47,15 @@ class OtaUpdateManager {
     private:
         //this is the ref to your interface 
         I_OtaUpdateManager* otaUpdateManagerInterface;
-
 };
 
 
-
+//abstract class used as an interface to pass messages
 class I_OtaUpdateManager {
     public:
-        virtual void otaUpdateDidStart(){
-            //default 
-            std::cout << "OTA update did start default fired" << std::endl;
-        };
-        virtual void otaUpdateDidFinish(){
-                //default 
-        };
-        virtual void otaUpdateDidFail(){
-                //default 
-        };
+        virtual void otaUpdateDidStart(){};
+        virtual void otaUpdateDidFinish(){};
+        virtual void otaUpdateDidFail(){};
 };
 
 

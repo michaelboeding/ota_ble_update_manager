@@ -1,6 +1,5 @@
 #include "OtaUpdateManager.h"
 
-
 // default static interface that is set on init
 static I_OtaUpdateManager defaultOtaManagerInterface;
 
@@ -12,8 +11,6 @@ OtaUpdateManager::OtaUpdateManager(){
 
 //destructor
 OtaUpdateManager::~OtaUpdateManager(){
-    //deinit all the objects here 
-
 }
 
 /**
