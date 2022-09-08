@@ -5,7 +5,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <cJSON.h>
 #include <esp_task_wdt.h>
 #include "NimBLEDevice.h"
 #include "esp_ota_ops.h"
