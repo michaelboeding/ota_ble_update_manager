@@ -36,7 +36,7 @@ In order for this component to function it requires the esp-nimble-cpp component
 5. Extend the abstract class that will act as an interface in the receiving class
 
     ```c++
-    class EFSDevice : public I_OtaUpdateManager{ }
+    class Device : public I_OtaUpdateManager{ }
     ```
 
 6. Override the abstract class functions in your .h file to recieve the messages in your application. 
@@ -52,13 +52,13 @@ In order for this component to function it requires the esp-nimble-cpp component
 
     ```c++
     //OTA Update Manager Delegate Callbacks
-    void EFSDevice::otaUpdateDidStart(){
+    void Device::otaUpdateDidStart(){
         std::cout << "OTA Update did start" << std::endl;
     }
-    void EFSDevice::otaUpdateDidFinish(){
+    void Device::otaUpdateDidFinish(){
         std::cout << "OTA Update did Finish " << std::endl;
     }
-    void EFSDevice::otaUpdateDidFail(){
+    void Device::otaUpdateDidFail(){
         std::cout << "OTA Update did fail " << std::endl;
     }
     ```
