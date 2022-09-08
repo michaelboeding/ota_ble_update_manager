@@ -3,10 +3,13 @@
 This component is used for over the air updating using bluetooth for an esp32.
 
 
-
 ## Dependencies
 
 In order for this component to function it requires the esp-nimble-cpp component that can be found here https://github.com/h2zero/esp-nimble-cpp. This library should be added as a component. 
+
+* esp-nimble-cpp
+* app_update
+* freertos
 
 
 ## How to use 
@@ -56,6 +59,30 @@ In order for this component to function it requires the esp-nimble-cpp component
         std::cout << "OTA Update did fail " << std::endl;
     }
     ```
+
+
+### Trobleshooting 
+Flow Control
+
+Flash Size needs to be correct
+
+Two OTA partitions
+
+NimBLE enabled
+
+1. Make sure NimBLE is enabled menuconfig -> Component config -> Bluetooth -> Bluetooth Host (NimBLE - BLE only)
+2. Flow Control needs to be enabled in NimBLE options menuconfig -> Component config -> Bluetooth -> NimBLE Options -> Flow Control
+3. Two Ota parameters need to be selected since we need both for ota. menuconfig -> Partition Table -> two ota
+4. For IOS there is an intresting issue that occurs when sending data, the fix for it is to apply a parameter update on the onConnect callback. This is handled in your actual application if you are using the esp-nimble-cpp library.
+
+    ```c++
+    //when the server connects to the device
+    void Device::onConnect(NimBLEServer* pServer, ble_gap_conn_desc *desc){
+        //update the connection parameters here so that it doesnt randomly disconnect, mainly for IOS
+        this->server->updateConnParams(desc->conn_handle, 0x10, 0x20, 0x00, 400);
+    }
+    ```
+
 
 
 
