@@ -1,6 +1,6 @@
 # ota_ble_update_manager
 
-This component is used to allow for over the air updating using an esp32. 
+This component is used for over the air updating using bluetooth for an esp32.
 
 
 
