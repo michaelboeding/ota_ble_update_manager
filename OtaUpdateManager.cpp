@@ -50,7 +50,7 @@ void OtaUpdateManager::setOtaFirmwareStartByte(int startByte){
 *
 * @param [in] startByte The ending byte for the ota firmware in hex
 */
-void setOtaFirmwareEndByte(int endByte){
+void OtaUpdateManager::setOtaFirmwareEndByte(int endByte){
     this->OTA_FIRMWARE_END_BYTE = endByte;
 }
 
