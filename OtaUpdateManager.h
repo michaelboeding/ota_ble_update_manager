@@ -5,7 +5,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <cJSON.h>
 #include <esp_task_wdt.h>
 #include "NimBLEDevice.h"
 #include "esp_ota_ops.h"
@@ -16,13 +15,12 @@ class I_OtaUpdateManager;
 class OtaUpdateManager {
 
     public:
-        //MARK: OTA INFO 
         esp_ota_handle_t otaHandler = 0;
         const esp_partition_t *update_partition;
         //start byte for ota firmware
-        const int OTA_FIRMWARE_START_BYTE = 0xF1;
+        int OTA_FIRMWARE_START_BYTE = 0xF1;
         //end byte for ota firmware
-        const int OTA_FIRMWARE_END_BYTE = 0xFF;
+        int OTA_FIRMWARE_END_BYTE = 0xFF;
         //create an enum for the diffrent states of the device in the ota process
         typedef enum OtaState {
             OTA_STATE_UPDATE_IN_PROGRESS = 0,
@@ -49,10 +47,9 @@ class OtaUpdateManager {
     private:
         //this is the ref to your interface 
         I_OtaUpdateManager* otaUpdateManagerInterface;
-
 };
 
-//interface used to pass updates to the users application code 
+//abstract class used as an interface to pass messages
 class I_OtaUpdateManager {
     public:
         virtual void otaUpdateDidStart(){};

@@ -1,6 +1,5 @@
 #include "OtaUpdateManager.h"
 
-
 // default static interface that is set on init
 static I_OtaUpdateManager defaultOtaManagerInterface;
 
@@ -12,8 +11,6 @@ OtaUpdateManager::OtaUpdateManager(){
 
 //destructor
 OtaUpdateManager::~OtaUpdateManager(){
-    //deinit all the objects here 
-
 }
 
 /**
@@ -50,7 +47,7 @@ void OtaUpdateManager::setOtaFirmwareStartByte(int startByte){
 *
 * @param [in] startByte The ending byte for the ota firmware in hex
 */
-void setOtaFirmwareEndByte(int endByte){
+void OtaUpdateManager::setOtaFirmwareEndByte(int endByte){
     this->OTA_FIRMWARE_END_BYTE = endByte;
 }
 
