@@ -80,11 +80,3 @@ In order for this component to function it requires the esp-nimble-cpp component
     }
     ```
 
-
-
-
-### Troubleshooting 
-
-
-* Confirm that BLE Stack has been enabled in the esp bluetooth components and that nimble is enabled 
-* Confirm that esp-nimble-cpp has been added to the project
