@@ -52,20 +52,12 @@ class OtaUpdateManager {
 
 };
 
-
-
+//interface used to pass updates to the users application code 
 class I_OtaUpdateManager {
     public:
-        virtual void otaUpdateDidStart(){
-            //default 
-            std::cout << "OTA update did start default fired" << std::endl;
-        };
-        virtual void otaUpdateDidFinish(){
-                //default 
-        };
-        virtual void otaUpdateDidFail(){
-                //default 
-        };
+        virtual void otaUpdateDidStart(){};
+        virtual void otaUpdateDidFinish(){};
+        virtual void otaUpdateDidFail(){};
 };
 
 
